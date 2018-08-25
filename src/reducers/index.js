@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-import skeleton from './skeleton'
+import hangman from './game'
 
 export default combineReducers({
-  skeleton
+  hangman
 })

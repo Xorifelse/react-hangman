@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
-import {Switch, Route, Link} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 
-import Skeleton from './components/SkeletonContainer'
+import HangmanContainer from './components/HangmanContainer'
+import Home from './components/Home';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Skeleton />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/hangman" component={HangmanContainer} />
       </div>
     );
   }
