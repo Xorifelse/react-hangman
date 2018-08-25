@@ -4,7 +4,10 @@ export const MAKE_GUESS = 'MAKE GUESS'
 export function newGame(word) {
   return {
     type: NEW_GAME,
-    payload: {word}
+    payload: {
+      word: word,
+      letters: []
+    }
   }
 }
 
@@ -12,7 +15,7 @@ export function makeGuess(letter) {
   return {
     type: MAKE_GUESS,
     payload: {
-      letter
+      letter: letter.toLowerCase()
     }
   }
 }

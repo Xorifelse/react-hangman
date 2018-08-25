@@ -6,8 +6,8 @@ import Hangman from './Hangman'
 import {makeGuess, newGame} from '../actions/game'
 
 import {
+  showGuess,
   wrongGuessCount,
-  wrongGuessLimit,
   isWinner,
   gameFinished,
   randomWord
@@ -19,23 +19,24 @@ class HangmanContainer extends React.PureComponent {
   }
 
   handleFormInput(e){
-    e.target.disabled = true
     this.props.makeGuess(e.target.value)
-
-    if(isWinner(this.props.hangman.word, this.props.hangman.letters || [])){
-      alert('there is a winner')
-    }
-
-    
+    e.target.disabled = true
   }
 
   render() {
+    let hm = this.props.hangman
+    if(!hm){
+      return null
+    }
 
     return (
       <Hangman 
-        word={this.props.hangman.word || ''}
+        word={hm.word}
+        show={showGuess(hm.word, hm.letters)}
         guessEvent={(e) => this.handleFormInput(e)}
-        guesses={this.props.hangman.letters || []}
+        winner={isWinner(hm.word, hm.letters)}
+        finished={gameFinished(hm.word, hm.letters)}
+        count={wrongGuessCount(hm.word, hm.letters)}
       />
     )
   }
