@@ -6,9 +6,14 @@ import {
 export default (state = '', action = {}) => {
   switch (action.type){
     case NEW_GAME:
-      return {...action.payload}
+      return action.payload
     case MAKE_GUESS:
-      return {...action.payload}
+      let guesses = [].concat('letters' in state ? state.letters : [])
+      guesses.push(action.payload.letter.toLowerCase())
+
+      return {
+        ...state, letters: guesses
+      }
     default:
       return state
   }
