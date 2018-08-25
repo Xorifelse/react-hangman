@@ -15,12 +15,16 @@ import {
 
 class HangmanContainer extends React.PureComponent {
   componentDidMount(){
-    this.props.newGame(randomWord())
+    this.start()
   }
 
   handleFormInput(e){
     this.props.makeGuess(e.target.value)
     e.target.disabled = true
+  }
+
+  start(){
+    this.props.newGame(randomWord())
   }
 
   render() {
@@ -37,6 +41,7 @@ class HangmanContainer extends React.PureComponent {
         winner={isWinner(hm.word, hm.letters)}
         finished={gameFinished(hm.word, hm.letters)}
         count={wrongGuessCount(hm.word, hm.letters)}
+        restart={(e) => this.start(e)}
       />
     )
   }

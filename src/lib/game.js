@@ -3,7 +3,6 @@ export const showGuess = (word, guesses) => {
 }
 
 export const wrongGuessCount = (word, guesses) => {
-  console.log(guesses)
   return guesses.filter(guess => word.indexOf(guess) < 0).length
 }
 

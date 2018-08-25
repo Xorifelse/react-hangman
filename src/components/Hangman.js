@@ -2,13 +2,18 @@ import * as React from 'react'
 
 import {Link} from 'react-router-dom'
 
+
 export default function Hangman(props) {
   const genAlphabeth = () => {
     return Array(26).fill().map((_, i) => String.fromCharCode('A'.charCodeAt(0) + i))
   }
 
   if(props.finished){
-    return props.winner ? <Link to="/">Winner!</Link> : <h1><Link to="/">Looser!</Link></h1>
+    return props.winner ? (
+      <div><h1><Link to="/">Winner!</Link></h1><div><Link to="/hangman" onClick={props.restart}>Try again?</Link></div></div>
+    ) : (
+      <div><h1><Link to="/">Looser!</Link></h1><div><Link to="/hangman" onClick={props.restart}>Try again?</Link></div></div>
+    )
   }
 
   return (
