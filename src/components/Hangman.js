@@ -8,7 +8,7 @@ export default function Hangman(props) {
   }
 
   if(props.finished){
-    let display = props.winner ? 'Winner!' : 'Looser!'
+    let display = props.winner ? 'Rembert Survived!' : 'Back to home page'
     return (
       <div class="container">
         <div class="left"></div>
@@ -33,7 +33,6 @@ export default function Hangman(props) {
       <div class="right"></div>
       <div class="main">
         <div class={"hangman pos" + props.count} />
-        <div><h1>The word is {props.word}</h1></div>
         <div><h1>{props.show}</h1></div>
         <div>Wrong guesses: {props.count}</div>
       </div>
