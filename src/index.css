@@ -2,12 +2,9 @@ body{
   padding: 30px;
 }
 
-img{
-  position: block;
-}
-
-.container{
-
+.hangman{
+  margin: auto;
+  
 }
 
 .pos0{
@@ -23,6 +20,32 @@ img{
   background: url('./img/hangman.jpg') -106.6px 0;
 }
 
+.pos2{
+  left: 213.2px;
+  width: 106.6px;
+  background: url('./img/hangman.jpg') -213.2px 0;
+}
+
+.pos3{
+  left: 106.6px;
+  width: 106.6px;
+  background: url('./img/hangman.jpg') -106.6px 0;
+}
+.pos4{
+  left: 106.6px;
+  width: 106.6px;
+  background: url('./img/hangman.jpg') -106.6px 0;
+}
+.pos5{
+  left: 106.6px;
+  width: 106.6px;
+  background: url('./img/hangman.jpg') -106.6px 0;
+}
+.pos6{
+  left: 106.6px;
+  width: 106.6px;
+  background: url('./img/hangman.jpg') -106.6px 0;
+}
 
 .container {
   display: grid;
@@ -43,6 +66,8 @@ img{
 }
 .title {
   grid-area: title;
+  font-size: 40px;
+  font-weight: 600;
 }
 .right {
   grid-area: right;

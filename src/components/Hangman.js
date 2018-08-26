@@ -10,9 +10,18 @@ export default function Hangman(props) {
   if(props.finished){
     let display = props.winner ? 'Winner!' : 'Looser!'
     return (
-      <div>
-        <h1><Link to="/">{display}</Link></h1>
-        <div><Link to="/hangman" onClick={props.restart}>Try again?</Link></div>
+      <div class="container">
+        <div class="left"></div>
+        <div class="title">Hangman</div>
+        <div class="right"></div>
+        <div class="main">
+          <div class={"hangman pos" + props.count} />
+        </div>
+        <div class="buttons">
+          <h1><Link to="/">{display}</Link></h1>
+          <div><Link to="/hangman" onClick={props.restart}>Try again?</Link></div>
+        </div>
+        <div class="bottom"></div>
       </div>
     )
   }
