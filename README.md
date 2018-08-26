@@ -1,3 +1,6 @@
+# Continuation build
+I had a busy weekend, not too much time to code but I had the basics down before I left. This build is a continuation when I got back on Sunday, adding simple styles and added a my own flare to it. Enjoy, and dont spill your coffee on your computer when testing it.
+
 # Redux Hangman Homework
 The homework assignment is to create a hangman game using React and Redux. The core logic for the game is provided as a library [here](https://gist.github.com/arienkock/d18ec2cb1246c6602651aa549c90f70b).
 
