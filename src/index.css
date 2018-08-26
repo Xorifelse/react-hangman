@@ -6,6 +6,10 @@ img{
   position: block;
 }
 
+.container{
+
+}
+
 .pos0{
   left: 0px;
   width: 106.6px;
@@ -30,10 +34,9 @@ img{
   "left bottom right";
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-rows: 0.3fr 1fr 0.5fr 80px;
+  text-align: center;
 }
-.container > div {
-  border: 1px dashed #888;
-}
+
 
 .left {
   grid-area: left;

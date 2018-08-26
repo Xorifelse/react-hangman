@@ -20,7 +20,7 @@ export default function Hangman(props) {
   return (
     <div class="container">
       <div class="left"></div>
-      <div class="title">title</div>
+      <div class="title">Hangman</div>
       <div class="right"></div>
       <div class="main">
         <div class={"hangman pos" + props.count} />
@@ -35,7 +35,7 @@ export default function Hangman(props) {
           )} 
         </div>
       </div>
-      <div class="bottom">bottom</div>
+      <div class="bottom"></div>
     </div>
   )
 }
