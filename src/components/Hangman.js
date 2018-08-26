@@ -8,42 +8,32 @@ export default function Hangman(props) {
   }
 
   if(props.finished){
-    let display = props.winner ? 'Rembert Survived!' : 'Back to home page'
+    let display = props.winner ? 'Rembert Survived!' : 'You loose!'
     return (
-      <div class="container">
-        <div class="left"></div>
-        <div class="title">Hangman</div>
-        <div class="right"></div>
-        <div class="main">
-          <div class={"hangman pos" + props.count} />
+      <div>
+        <div className="main">
+          <div className={"hangman pos" + props.count} />
         </div>
-        <div class="buttons">
+        <div className="buttons">
           <h1><Link to="/">{display}</Link></h1>
           <div><Link to="/hangman" onClick={props.restart}>Try again?</Link></div>
         </div>
-        <div class="bottom"></div>
       </div>
     )
   }
 
   return (
-    <div class="container">
-      <div class="left"></div>
-      <div class="title">Hangman</div>
-      <div class="right"></div>
-      <div class="main">
-        <div class={"hangman pos" + props.count} />
+    <div>
+      <div className="main">
+        <div className={"hangman pos" + props.count} />
         <div><h1>{props.show}</h1></div>
         <div>Wrong guesses: {props.count}</div>
       </div>
-      <div class="buttons">
-        <div>
-          {genAlphabeth().map(v => 
-              <button key={v} onClick={props.guessEvent} value={v}>{v}</button>
-          )} 
-        </div>
+      <div className="buttons">
+        {genAlphabeth().map(v =>
+          <button key={v} onClick={props.guessEvent} value={v}>{v}</button>
+        )}
       </div>
-      <div class="bottom"></div>
     </div>
   )
 }
